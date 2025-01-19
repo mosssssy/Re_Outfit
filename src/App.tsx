@@ -7,6 +7,7 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
 import Start from "./pages/Start";
+import PasswordReset from "./pages/ResetPassword";
 import { AuthContext, AuthProvider } from "./services/AuthContext";
 
 const App: React.FC = () => {
@@ -38,10 +39,8 @@ const AuthContent: React.FC = () => {
       <Route path="/login" element={<Login />} />
       {/* ↓　ホーム画面（ログインしていない場合はログイン画面にリダイレクト） */}
       <Route path="/home" element={<Home />} />
-      {/* <Route
-        path="/home"
-        element={user ? <Home /> : <Navigate to="/login" replace />}
-      /> */}
+      {/* ↓　パスワードリセット画面 */}
+      <Route path="/reset_password" element={<PasswordReset />} />
     </Routes>
   );
 };

@@ -1,31 +1,30 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import { Login } from "../../../services/login";
+import { useNavigate } from "react-router-dom";
+import { ResetPassword } from "../../../services/resetPassword";
 import Button from "../../elements/button/Button";
 import ErrorContainer from "../../elements/errorContainer/errorContainer";
 import Form from "../../elements/form/Form";
 import "./authForm.css";
 
-interface LoginFormProps {
-  onLoginSuccess: () => void;
-}
-
-const LoginForm: React.FC<LoginFormProps> = ({ onLoginSuccess }) => {
+const ResetPasswordForm: React.FC = () => {
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
   const [error, setError] = useState<string | null>(null);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!email || !password) {
+    if (!email) {
       setError("すべてのフィールドを入力してください");
       return;
     }
 
     try {
-      await Login(email, password);
-      onLoginSuccess();
+      await ResetPassword(email);
+      alert(
+        "パスワード変更用のメールを送信しました。\nメールに記載のURLより変更手続きを行ってください。"
+      );
+      navigate("/login"); // ログアウト後に /login ページに遷移
     } catch (error) {
       if (error instanceof Error) {
         setError(error.message);
@@ -46,24 +45,12 @@ const LoginForm: React.FC<LoginFormProps> = ({ onLoginSuccess }) => {
         placeholder="メールアドレスを入力してください"
         required
       />
-      <Form
-        label="パスワード"
-        type="password"
-        id="password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-        placeholder="パスワードを入力してください"
-        required
-      />
-      <div>
-        <Link to="/reset_password">パスワードが分からない</Link>
-      </div>
       <ErrorContainer errorMessage={error || undefined} size="big" />
       <div className="buttonContainer">
-        <Button label="ログイン" variant="black" type="submit" />
+        <Button label="メールを送信する" variant="black" type="submit" />
       </div>
     </form>
   );
 };
 
-export default LoginForm;
+export default ResetPasswordForm;

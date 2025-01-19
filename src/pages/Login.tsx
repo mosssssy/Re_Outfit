@@ -1,6 +1,5 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import MarginBox from "../components/elements/marginBox/MarginBox";
 import LoginForm from "../components/layouts/authForm/loginForm";
 import styles from "../components/styles/auth.module.css"; // CSS Modulesをインポート
 
@@ -19,7 +18,7 @@ const Login: React.FC = () => {
         src="/src/assets/images/logo/outfit_logo_black.png"
         alt="OutFit"
       />
-      <MarginBox size="huge" />
+      <h2>ログイン</h2>
       <LoginForm onLoginSuccess={handleLoginSuccess} />
     </div>
   );
