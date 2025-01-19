@@ -1,0 +1,42 @@
+.button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  /* ↓　ホバー時は背景色が滑らかに変化し、クリック時はボタンが少し縮むアニメーション */
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-weight: bold;
+}
+
+.button:active {
+  /* クリック時にボタンが少し縮み、離すと元のサイズに戻るアニメーション */
+  transform: scale(0.95);
+}
+
+.button.black {
+  background-color: #000;
+  color: #fff;
+}
+
+.button.black:hover {
+  background-color: #333;
+}
+
+.button.gray {
+  background-color: #606060;
+  color: #fff;
+}
+
+.button.gray:hover {
+  background-color: #808080;
+}
+
+.button.danger {
+  background-color: #ff006a;
+  color: #fff;
+}
+
+.button.danger:hover {
+  background-color: #d10057;
+}

@@ -1,0 +1,13 @@
+.form {
+  display: flex; /* フォームをフレックスボックスに */
+  flex-direction: column; /* フォームの要素を縦に並べる */
+  width: 100%;
+  max-width: 400px; /* フォームの最大幅を指定 */
+  margin: 0 auto; /* 中央揃え */
+  gap: 16px; /* 子要素間のスペース */
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: center; /* 水平方向の中央揃え */
+}

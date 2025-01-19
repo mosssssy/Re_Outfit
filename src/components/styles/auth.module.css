@@ -1,0 +1,12 @@
+.container {
+  flex-direction: column;
+  justify-content: center; /* 水平方向方向で中央揃え */
+}
+
+.image {
+  width: 100%; /* 親コンテナに合わせて横幅を100%に */
+  max-width: 400px; /* 最大幅を600pxに制限 */
+  height: auto; /* 高さは自動調整 */
+  display: block; /* 画像がインライン要素として扱われないように */
+  margin: 0 auto; /* 画像を中央揃え */
+}

@@ -1,0 +1,16 @@
+.errorContainer {
+  display: flex;
+  align-items: top;
+  justify-content: center;
+  font-weight: bold;
+  overflow: hidden; /* 高さを超える要素を隠す */
+}
+
+.errorMessage {
+  color: #ff006a;
+  font-size: 16px; /* メッセージの文字サイズ */
+  text-align: center;
+  white-space: nowrap; /* メッセージが長すぎる場合に折り返しを防ぐ */
+  text-overflow: ellipsis; /* メッセージが長すぎる場合に省略記号を表示 */
+  overflow: hidden; /* メッセージがコンテナを超えた場合に隠す */
+}
