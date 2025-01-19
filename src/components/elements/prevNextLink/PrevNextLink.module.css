@@ -1,0 +1,23 @@
+.container {
+  display: flex;
+  justify-content: space-between; /* 両端に配置 */
+  align-items: center;
+  width: 100%; /* 必要に応じて親コンテナ幅を指定 */
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 16px;
+  margin: 0 8px;
+  font-size: 16px;
+  border: 0;
+  cursor: pointer;
+  text-decoration: none; /* リンク風の場合 */
+  color: #555; /* テキストの色 */
+}
+
+.hidden {
+  display: none;
+}
